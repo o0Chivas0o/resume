@@ -10,19 +10,13 @@ setTimeout(function () {
 let aTags = document.getElementsByClassName('menuTrigger')
 for(let i = 0;i<aTags.length;i++){
   aTags[i].onmouseenter = function(e){
-    let a = e.currentTarget
-    let brother = a.nextSibling
-    while (brother.tagName !== 'UL'){
-      brother = brother.nextSibling
-    }
+    let li = e.currentTarget
+    let brother = li.getElementsByTagName('ul')[0]
     brother.classList.add('active')
   }
   aTags[i].onmouseleave = function(e){
-    let a = e.currentTarget
-    let brother = a.nextSibling
-    while (brother.tagName !== 'UL'){
-      brother = brother.nextSibling
-    }
+    let li = e.currentTarget
+    let brother = li.getElementsByTagName('ul')[0]
     brother.classList.remove('active')
   }
 }
