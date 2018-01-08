@@ -7,6 +7,7 @@ setTimeout(function () {
   }
 },1500)
 
+// 二级菜单展示
 let liTags = document.querySelectorAll('nav.menu > ul > li')
 for(let i = 0;i<liTags.length;i++) {
   liTags[i].onmouseenter = function (e) {
@@ -17,6 +18,7 @@ for(let i = 0;i<liTags.length;i++) {
   }
 }
 
+// 二级菜单点击标签 跳转对应锚点
 let aTags = document.querySelectorAll('nav.menu > ul > li > a')
 for(let i = 0;i<aTags.length;i++){
   aTags[i].onclick = function(e){
