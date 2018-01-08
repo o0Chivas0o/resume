@@ -6,22 +6,15 @@ setTimeout(function () {
     window.scrollY > 0 ? topNavBar.classList.add('sticky') : topNavBar.classList.remove('sticky')
   }
 },1500)
-
-let aTags = document.getElementsByClassName('menuTrigger')
-for(let i = 0;i<aTags.length;i++){
-  aTags[i].onmouseenter = function(e){
-    let li = e.currentTarget
-    let brother = li.getElementsByTagName('ul')[0]
-    brother.classList.add('active')
+let liTags = document.querySelectorAll('nav.menu > ul > li')
+for(let i = 0;i<liTags.length;i++) {
+  liTags[i].onmouseenter = function (e) {
+    e.currentTarget.classList.add('active')
   }
-  aTags[i].onmouseleave = function(e){
-    let li = e.currentTarget
-    let brother = li.getElementsByTagName('ul')[0]
-    brother.classList.remove('active')
+  liTags[i].onmouseleave = function (e) {
+    e.currentTarget.classList.remove('active')
   }
 }
-
-
 
 portfolio1.onclick= function(){
   portfolioBar.className = 'bar state-1'
