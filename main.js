@@ -1,12 +1,33 @@
 // 给loading一个函数 让别人看得到
 setTimeout(function () {
   siteWelcome.classList.remove('active')
-},0)
+  // stickyNavBar
+  window.onscroll = function (e) {
+    window.scrollY > 0 ? topNavBar.classList.add('sticky') : topNavBar.classList.remove('sticky')
+  }
+},1500)
 
-// stickyNavBar
-window.onscroll = function (e) {
-  window.scrollY > 0 ? topNavBar.classList.add('sticky') : topNavBar.classList.remove('sticky')
+let aTags = document.getElementsByClassName('menuTrigger')
+for(let i = 0;i<aTags.length;i++){
+  aTags[i].onmouseenter = function(e){
+    let a = e.currentTarget
+    let brother = a.nextSibling
+    while (brother.tagName !== 'UL'){
+      brother = brother.nextSibling
+    }
+    brother.classList.add('active')
+  }
+  aTags[i].onmouseleave = function(e){
+    let a = e.currentTarget
+    let brother = a.nextSibling
+    while (brother.tagName !== 'UL'){
+      brother = brother.nextSibling
+    }
+    brother.classList.remove('active')
+  }
 }
+
+
 
 portfolio1.onclick= function(){
   portfolioBar.className = 'bar state-1'
