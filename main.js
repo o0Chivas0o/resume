@@ -19,6 +19,13 @@ for(let i = 0;i<liTags.length;i++) {
 }
 
 // 二级菜单点击标签 跳转对应锚点
+function animate(time) {
+  requestAnimationFrame(animate);
+  TWEEN.update(time);
+}
+requestAnimationFrame(animate);
+
+
 let aTags = document.querySelectorAll('nav.menu > ul > li > a')
 for(let i = 0;i<aTags.length;i++){
   aTags[i].onclick = function(e){
@@ -31,20 +38,19 @@ for(let i = 0;i<aTags.length;i++){
     let top = document.querySelector(e.currentTarget.getAttribute('href')).offsetTop
 
     // 添加点击标签缓动动画
-    let n = 25 // 一共动25次
-    let duration = 500 / n  // 多长时间动一次
     let currentTop = window.scrollY
     let targetTop = top - 80
-    let distance = (targetTop - currentTop) / n
-    let i = 0
-    let id = setInterval( () =>{
-      if(i === n){
-        window.clearInterval(id)
-        return
-      }
-      i = i +1
-      window.scrollTo(0 , currentTop + distance * i)
-    },duration)
+    let s = targetTop - currentTop
+    let t = Math.abs((s/100)*300)
+    if(t>500){t=500}
+    let coords = { y: currentTop};
+    let tween = new TWEEN.Tween(coords)
+      .to({ y: targetTop}, t)
+      .easing(TWEEN.Easing.Quadratic.InOut)
+      .onUpdate(function() {
+        window.scrollTo(0,coords.y)
+      })
+      .start();
   }
 }
 
