@@ -23,12 +23,28 @@ let aTags = document.querySelectorAll('nav.menu > ul > li > a')
 for(let i = 0;i<aTags.length;i++){
   aTags[i].onclick = function(e){
     e.preventDefault()
-    let a = e.currentTarget
-    let href = a.getAttribute('href')
+    // let a = e.currentTarget
+    // let href = a.getAttribute('href')
     // a.href 是浏览器解析后的带HTTP的地址,不是我想要的地址 这里得到的结果是 '#siteAbout'
-    let element = document.querySelector(href)
-    let top = element.offsetTop  // 获取对应锚点距离浏览器高度是多少
-    window.scrollTo(0,top - 80)
+    // let element = document.querySelector(href)
+    // let top= element.offsetTop  // 获取对应锚点距离浏览器高度
+    let top = document.querySelector(e.currentTarget.getAttribute('href')).offsetTop
+
+    // 添加点击标签缓动动画
+    let n = 25 // 一共动25次
+    let duration = 500 / n  // 多长时间动一次
+    let currentTop = window.scrollY
+    let targetTop = top - 80
+    let distance = (targetTop - currentTop) / n
+    let i = 0
+    let id = setInterval( () =>{
+      if(i === n){
+        window.clearInterval(id)
+        return
+      }
+      i = i +1
+      window.scrollTo(0 , currentTop + distance * i)
+    },duration)
   }
 }
 
