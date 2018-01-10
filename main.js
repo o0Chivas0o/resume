@@ -1,28 +1,42 @@
-// 给loading一个函数 让别人看得到
-setTimeout(function () {
-  siteWelcome.classList.remove('active')
-  // stickyNavBar
-  window.onscroll = function () {
-    window.scrollY > 0 ? topNavBar.classList.add('sticky') : topNavBar.classList.remove('sticky')
-    // 滚动到对应锚点 二级菜单对应标签高亮
-    let specialTags = document.querySelectorAll('[data-x]')
-    let minIndex = 0
-    for(let i = 0;i<specialTags.length;i++){
-      if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
-        minIndex = i
-      }
-    }
-    let id = specialTags[minIndex].id
-    let a = document.querySelector(`a[href="#${id}"]`)
-    let li = a.parentNode
-    let siblings =  li.parentNode.children
-    for(let i = 0 ;i<siblings.length;i++){
-     siblings[i].classList.remove('highlight')
-    }
-    li.classList.add('highlight')
-  }
-},1500)
+// 去除loading
+siteWelcome.classList.remove('active')
 
+// 添加 offset 类
+let specialTags = document.querySelectorAll('[data-x]')
+for(let i =0;i<specialTags.length; i++){
+  specialTags[i].classList.add('offset')
+}
+setTimeout(function(){
+  findClosest()
+},200)
+// stickyNavBar
+window.onscroll = function () {
+  window.scrollY > 0 ? topNavBar.classList.add('sticky') : topNavBar.classList.remove('sticky')
+  findClosest()
+}
+
+function findClosest(){
+  // 滚动到对应锚点 二级菜单对应标签高亮
+  let specialTags = document.querySelectorAll('[data-x]')
+  let minIndex = 0
+  let id = specialTags[minIndex].id
+  let a = document.querySelector(`a[href="#${id}"]`)
+  let li = a.parentNode
+  let siblings =  li.parentNode.children
+  // 找到最近的类
+  for(let i = 0;i<specialTags.length;i++){
+    if(Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)){
+      minIndex = i
+    }
+  }
+  // 去除默认offset类
+  specialTags[minIndex].classList.remove('offset')
+  // 给二级菜单添加highlight类
+  for(let i = 0 ;i<siblings.length;i++){
+    siblings[i].classList.remove('highlight')
+  }
+  li.classList.add('highlight')
+}
 // 二级菜单展示
 let liTags = document.querySelectorAll('nav.menu > ul > li')
 for(let i = 0;i<liTags.length;i++) {
