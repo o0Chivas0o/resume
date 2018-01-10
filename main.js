@@ -12,18 +12,14 @@ setTimeout(function () {
         minIndex = i
       }
     }
-    for(let i = 0;i<specialTags.length;i++){
-      specialTags[i].classList.remove('active')
-    }
-    specialTags[minIndex].classList.add('active')
     let id = specialTags[minIndex].id
     let a = document.querySelector(`a[href="#${id}"]`)
     let li = a.parentNode
     let siblings =  li.parentNode.children
     for(let i = 0 ;i<siblings.length;i++){
-     siblings[i].classList.remove('active')
+     siblings[i].classList.remove('highlight')
     }
-    li.classList.add('active')
+    li.classList.add('highlight')
   }
 },1500)
 
