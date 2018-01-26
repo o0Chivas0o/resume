@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shorcut icon" href="img/all.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <title>李智颖的简历</title>
+</head>
+
+<body>    
+    <div class="resume">
+        <div class="aside">
+            <img src="img/me.png" alt="avat" class="avat">
+            <h2>李 智 颖</h2>
+            <ol id="nav">
+                <li class="active">个　人</li>
+                <li>项　目</li>
+                <li>技　能</li>
+                <li>联　系</li>
+            </ol>
+            <a href="李智颖的简历.pdf" download>P D F</a>
+            <div class="icons">
+                <a href="mailto:dwight_lee@foxmail.com"  title="email"><img src="icons/email.png" alt="邮箱"></a>
+                <a href="https://github.com/o0Chivas0o" title="github"><img src="icons/github.png" alt="github"></a>
+                <a href="https://github.com/o0Chivas0o/Blog/issues" title="blog"><img src="icons/blog.png" alt="博客"></a>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <div class="about active ">
+                <h1>个人介绍</h1>
+                <h2>意向职位：前端开发</h2>
+                <h2>年龄：24岁</h2>
+                <h2>手机：18171019629</h2>
+                <h2>城市：湖北武汉</h2>
+                <h2>教育经历：2012-2015 武汉科技大学（大专）</h2>
+                <h2>热爱生活，性格乐观，每天都充满正能量</h2>
+                <h2>热爱技术，对于不熟悉的方法充满好奇</h2>
+                <h2>热爱学习，努力提升自我，完善自我</h2>
+                <h2>看电影，听音乐，健身，持续健身</h2>
+            </div>
+            <div class="projects">
+                <h1>项目介绍</h1>
+                <ul>
+                    <li>
+                        <h2>1、网易云音乐移动端(Web App)</h2>
+                        <img class="print" src="./img/netease.png" alt="网易云音乐移动端">
+                        <p>移动端网页版网易云音乐，实现按曲名或歌手搜索、歌曲播放和暂停、歌词滚动等功能</p>
+                        <p>以LeanCloud 为数据库，通过函数节流处理搜索框请求重复发送问题</p>
+                        <p>分支使用webpack处理文件</p>
+                        <p>技术栈：原生JS、jQuery、leanCloud、webpack、requireJS</p>
+                        <p>(预览请使用移动端模式)</p>
+                        <div class="more">
+                            <div class="icons">
+                                <img src="icons/js.png" alt="js">
+                                <img src="icons/webpack.png" alt="webpack">
+                                <img src="icons/jquery.png" alt="jquery">
+                                <img src="icons/requireJS.png" alt="requireJS">
+                            </div>
+                            <div class="preview">
+                                <a href="http://lizhiying.pro/home.html"><div>&nbsp;预览</div></a>
+                                <a href="https://github.com/o0Chivas0o/163music"><div>代码</div></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>2、ToDoList(react.js)</h2>
+                        <img class="print" src="//i.loli.net/2017/10/22/59ecb40a1a44b.png" alt="简历编辑">
+                        <p>基于react.js开发的一个ToDoList的应用，实现用户注册、登录，记录完成/未完成事项清单</p>
+                        <p>以LeanCloud 为数据库，记录用户username、password、email，以实现找回密码功能</p>
+                        <p>技术栈：leanCloud、webpack、react.js</p>
+                        <div class="more">
+                            <div class="icons">
+                                <img src="icons/react.png" alt="react">
+                                <img src="icons/webpack.png" alt="webpack">
+                            </div>
+                            <div class="preview">
+                                <a href="https://o0chivas0o.github.io/react-todoList/build/index.html"><div>&nbsp;预览</div></a>
+                                <a href="https://o0chivas0o.github.io/react-todoList/build/index.html"><div>代码</div></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>3、Canvas画板(Web App)</h2>
+                        <img class="print" src="./img/canvas.png" alt="canvas">
+                        <p>移动端网页版绘图工具</p>
+                        <p>能够进行清除、删除、保存等操作</p>
+                        <p>技术栈：<span>原生JS</span>、<span>Canvas</span></p>
+                        <p>(预览请使用移动端模式)</p>
+                        <div class="more">
+                            <div class="icons">
+                                <img src="icons/js.png" alt="js">
+                                <img src="icons/html5.png" alt="html5">
+                            </div>
+                            <div class="preview">
+                                <a href="https://o0chivas0o.github.io/demo-for-canvas/index.html"><div>&nbsp;预览</div></a>
+                                <a href="https://github.com/o0Chivas0o/demo-for-canvas"><div>代码</div></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>4、响应式布局+自动加载</h2>
+                        <img class="print" src="./img/layout.png" alt="响应式布局">
+                        <p>利用媒体查询在不同尺寸的屏幕上显示不同的布局</p>
+                        <p>原生JS实现懒加载、自动加载下一页</p>
+                        <p>技术栈：<span>媒体查询</span>、纯CSS、<span>Flex布局</span>、原生JS</p>
+                        <div class="more">
+                            <div class="icons">
+                                <img src="icons/js.png" alt="js">
+                                <img src="icons/css.png" alt="css">
+                            </div>
+                            <div class="preview">
+                                <a href="https://o0chivas0o.github.io/theSimplestPage/"><div>&nbsp;预览</div></a>
+                                <a href="https://github.com/o0Chivas0o/theSimplestPage"><div>代码</div></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h2>5、纯CSS绘制的皮卡丘</h2>
+                        <img class="print" src="./img/pikachu.png" alt="小黄人">
+                        <p>纯CSS绘制一个皮卡丘</p>
+                        <p>技术栈：<span>Flex布局</span>、CSS 3 动画</p>
+                        <div class="more">
+                            <div class="icons">
+                                <img src="icons/css.png" alt="css">
+                            </div>
+                            <div class="preview">
+                                <a href="https://o0chivas0o.github.io/pikachu/pikachu.html"><div>&nbsp;预览</div></a>
+                                <a href="https://github.com/o0Chivas0o/pikachu"><div>代码</div></a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="skills">
+                <h1>技能总结</h1>
+                <ul>
+                    <li>
+                        <h2>1、静态页面制作</h2>
+                        <p>对Web标准的深刻理解，已经熟练使用Flex 布局、CSS 3动画</p>
+                        <p>像素级还原设计稿，并以响应式适应各种尺寸的屏幕</p>
+                    </li>
+                    <li>
+                        <h2>2、移动端页面制作</h2>
+                        <p>采用<B>动态REM(flexible.js)方案</B>适配各尺寸手机屏幕</p>
+                        <p>熟悉手机端页面开发，用浏览器模拟<B>不同型号</B>、<B>不同尺寸</B> 手机端的页面调试</p>
+                    </li>
+                    <li>
+                        <h2>3、原生JavaScript</h2>
+                        <p>理解基本概念，如原型链、闭包、作用域链、Promise异步、this 等</p>
+                        <p>能够使用原生JS将代码按功能封装成 DOM 库</p>
+                        <p>熟练掌握jQuery库，了解Vue.js，react.js，并对MVC，MVVM模块化编程模式有一定了解</p>
+                        <p>能够使用gulp、 webpack、 RequireJS 打包代码</p>
+                    </li>
+                    <li>
+                        <h2>4、配合后端开发</h2>
+                        <p>了解HTTP 协议、 AJAX 技术</p>
+                        <p>了解两种跨域策略：<B>CORS</B> 和 <B>JSONP</B> </p>
+                    </li>
+                    <li>
+                        <h2>5、热爱学习</h2>
+                        <p>热爱前端，对待新鲜事物、技术、知识有着强烈的好奇心，并有强烈的求职欲望。</p>
+                        <p>乐于学习新的技术(不仅限于前端)</p>
+                        <p>可以适应长时间单纯而不枯燥的学习</p>
+                        <p>善于分享与交流，并有着良好的学习习惯。</p>
+                        <p>接下来的阶段里会持续强化对前端知识、基础算法、后端知识的补足，去理解一个产品的生命周期。</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h1>请联系我</h1>
+                <h2><img src="icons/email-1.png" alt="email"><a href="mailto:dwight_lee@foxmail.com">dwight_lee@foxmail.com</a></h2>
+                <h2><img src="icons/phone.png" alt="phone">18171019629</h2>
+                <h2><img src="icons/qq.png" alt="QQ">326656669</h2>
+                <h2><img src="icons/wx.png" alt="wx"><img class="icon" src="img/wechat.png" alt="weixin"></h2>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

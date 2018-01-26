@@ -1,0 +1,130 @@
+*{padding: 0;  margin: 0;  box-sizing: border-box;}
+ul,ol{list-style: none;}
+h1,h2,h3,h4,h5 {margin: 2px;}
+a{text-decoration: none;}
+a:hover{font-weight: bold;}
+
+.main {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+}
+.main .left {
+    width: 200px;
+    background: #39A0D7;
+    color: #f1f2f2;
+    padding-top: 20px;
+}
+.left .log {
+    display:flex;
+    justify-content:center;
+    margin-bottom: 20px;
+}
+.left .log img {
+width: 110px;
+height: 110px;
+border-radius: 50%;
+}
+.left h2 {
+    text-align: center;
+}
+.line {
+    height: 5px;
+    width: 90%;
+    margin: 10px auto;
+    background: #3797cc;
+}
+.left .introduce {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.icon-weijianli,
+.icon-book1,
+.icon-set {
+    margin: 0 10px;
+    font-size: 20px;
+}
+.left .introduce .intro {
+    font-size: 13px;
+    margin-right: 10px;
+    line-height: 16px;
+    width: 150px;
+}
+.skill-line {
+    position: relative;
+    width: 150px;
+    height: 3px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+.skill-line-4 {
+    background-image: -webkit-linear-gradient(left, #f1f2f2 110px, #3797cc 110px);
+}
+.skill-line-3 {
+    background-image: -webkit-linear-gradient(left, #f1f2f2 90px, #3797cc 90px);
+}
+.introduce .connect {
+    color: #f1f2f2;
+    line-height: 20px;
+    width: 190px;
+    font-size: 13px;
+}
+.connect li {
+    line-height: 30px;
+}
+.connect a {
+    color: #f1f2f2;
+}
+.connect a:hover {
+    font-size: 14px;
+}
+.main .right {
+    font-weight: bold;
+    width: 496px;
+    background: #D8D8D7;
+    color: #838383;
+    padding-top: 10px;
+}
+.right .skill {
+    width: 475px;
+    background: #fff;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 20px 0 20px 20px;
+}
+.middle {
+    font-size: 15px;
+    color: #39A0D7;
+    margin: 10px auto;
+}
+.middle li {
+    font-size: 13px;
+    line-height: 20px;
+    color: #838383;
+}
+.middle a{
+    color: #39A0D7;
+}
+
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main .left {
+        width: 100%;
+    }
+    .main .left .introduce {
+        width: 100%;
+    }
+    .main .right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

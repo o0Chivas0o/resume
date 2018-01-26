@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b3a760e3-70e2-4bdf-84a6-df0bc463542d" name="Default" comment="解决鼠标滚到对应标签有二级菜单自动弹出的BUG">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/resume-online.iml" afterPath="$PROJECT_DIR$/.idea/resume.iml" />
+    <list default="true" id="b3a760e3-70e2-4bdf-84a6-df0bc463542d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/img/1.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/img/2.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/img/3.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/img/avatar.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/img/rs-cover.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/loading.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/main.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/resume.pdf" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-new/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/README.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/blog.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/css.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/email-1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/email.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/github.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/gulp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/html5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/jquery.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/js.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/phone.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/qq.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/react.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/requireJS.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/sass.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/vue.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/webpack.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/wechat.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/icons/wx.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/Thumbs.db" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/all.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/avat.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/canvas.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/layout.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/me.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/netease.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/pikachu.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/react.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/img/wechat.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/jquery.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/resume-pdf/resume.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/resume-pdf/resume.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/resume-old/李智颖的简历.pdf" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/img/1.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/2.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/3.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/avatar.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/img/rs-cover.jpg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/loading.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/main.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/resume.pdf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/style.css" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -186,7 +225,7 @@
       <workItem from="1516278050734" duration="456000" />
       <workItem from="1516866380434" duration="1000" />
       <workItem from="1516954529051" duration="18000" />
-      <workItem from="1516956423394" duration="64000" />
+      <workItem from="1516956423394" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="修改html内容">
       <created>1513346546690</created>
@@ -314,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515594979218</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="更新简历">
+      <created>1516956519014</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1516956519014</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27162000" />
+    <option name="totallyTimeSpent" value="27266000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -376,7 +422,8 @@
     <MESSAGE value="滑动鼠标 根据offsetTop 来显示对应二级菜单高亮" />
     <MESSAGE value="解决鼠标滚到对应标签有二级菜单自动弹出的BUG" />
     <MESSAGE value="给每一块添加缓动,添加技能条动画" />
-    <option name="LAST_COMMIT_MESSAGE" value="给每一块添加缓动,添加技能条动画" />
+    <MESSAGE value="更新简历" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新简历" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
