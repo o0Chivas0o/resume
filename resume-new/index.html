@@ -106,7 +106,7 @@
         </footer>
     </div>
     <p class="downloadResume-wrapper">
-    <a class="downloadResume" href="./resumu.pdf" target="_blank" download>下载 PDF 简历</a>
+    <a class="downloadResume" href="./resume.pdf" target="_blank" download>下载 PDF 简历</a>
     </p>
     <p class="selfIntroduction">
         一段文字，一段文字，一段文字，一段文字，一段文字，一段文字，一段文字，一段文字，一段文字，一段文字，
@@ -161,26 +161,15 @@
 </section>
 <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
-    <nav>
-        <ol class="clearfix">
-            <li id="portfolio1">所有</li>
-            <li id="portfolio2">框架</li>
-            <li id="portfolio3">原生JS&amp;CSS</li>
-        </ol>
-        <div id="portfolioBar" class="bar state-1">
-            <div class="bar-inner"></div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <img src="./img/project-img/163-music.jpg" class="swiper-slide">
+            <img src="./img/project-img/canvas.jpg" class="swiper-slide">
+            <img src="./img/project-img/pikachu.jpg" class="swiper-slide">
         </div>
-    </nav>
-    <div class="works">
-        <div class="big" style="top:0;left:0;">
-            <img src="./img/1.jpg" alt="作品1">
-        </div>
-        <div class="small" style="top:0;left:645px">
-            <img src="./img/2.jpg" alt="作品2">
-        </div>
-        <div class="small" style="top:312px;left: 645px">
-            <img src="./img/3.jpg" alt="作品3">
-        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
 </section>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>

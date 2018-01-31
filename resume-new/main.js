@@ -19,7 +19,7 @@ function findClosest () {
   // 滚动到对应锚点 二级菜单对应标签高亮
   let specialTags = document.querySelectorAll('[data-x]')
   let minIndex = 0
-  for (let i = 1; i < specialTags.length; i++) {
+  for (let i = 0; i < specialTags.length; i++) {
     if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
       minIndex = i
     }
@@ -87,12 +87,17 @@ for (let i = 0; i < aTags.length; i++) {
   }
 }
 
-portfolio1.onclick = function () {
-  portfolioBar.className = 'bar state-1'
-}
-portfolio2.onclick = function () {
-  portfolioBar.className = 'bar state-2'
-}
-portfolio3.onclick = function () {
-  portfolioBar.className = 'bar state-3'
-}
+let mySwiper = new Swiper ('.swiper-container', {
+  loop:true,
+  effect: 'flip',
+  grabCursor: true,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+})
+
+

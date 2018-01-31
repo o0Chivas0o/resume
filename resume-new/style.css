@@ -63,15 +63,8 @@ section.skills .progressBar {height: 5px;background: #FAE1E1;border-radius: 2px;
 section.skills .progressBar > .progress {height: 100%;background: #E6686A;width: 70%;border-radius: 2px;transform: translateX(0);transition: all 1s}
 section.skills.offset .progressBar > .progress{transform: translateX(-100%);}
 section.portfolio {text-align: center;margin-bottom: 100px;}
-section.portfolio > nav{text-align: center;}
-section.portfolio > nav > ol{margin: 0 auto;display: inline-block;vertical-align: top;}
-section.portfolio > nav > ol > li{float: left;margin-left: 40px;cursor: pointer;}
-section.portfolio > nav > ol > li:first-child{margin-left: 0;}
-section.portfolio > nav{display: inline-block;vertical-align: top;margin-top: 32px;}
-section.portfolio > nav .bar{height: 5px;background: white;margin-top: 5px;margin-bottom: 28px;border-radius: 2px;}
-section.portfolio > nav .bar-inner{height: 100%;background: #E6686A;border-radius: 2px;transition: all 0.3s;}
-section.portfolio > nav .bar.state-1 .bar-inner{margin-left: 0;width: 50px;}
-section.portfolio > nav .bar.state-2 .bar-inner{margin-left: 65px;width: 50px;}
-section.portfolio > nav .bar.state-3 .bar-inner{margin-left: 140px;width: 96px;}
-section.portfolio .works{position: relative;height: 597px;}
-section.portfolio .works > .big, section.portfolio .works > .small {position: absolute;}
+section.portfolio > h2{margin-bottom: 100px;}
+section.portfolio .swiper-container {width: 900px;height: 450px;position: relative;margin-bottom: 200px}
+section.portfolio .swiper-container .swiper-button-prev,.swiper-button-next{position: absolute;bottom:50%;}
+section.portfolio .swiper-button-prev{left: -80px;width: 64px;height: 64px;background-color: white;border-radius: 50%}
+section.portfolio .swiper-button-next{right: -80px;width: 64px;height: 64px;background-color: white;  border-radius: 50%}
