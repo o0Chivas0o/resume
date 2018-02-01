@@ -6,13 +6,13 @@
     init: function (view) {
       this.view = view
       this.initAnimation()
+      this.bindEvents()
     },
     initAnimation: function () {
       function animate (time) {
         requestAnimationFrame(animate)
         TWEEN.update(time)
       }
-
       requestAnimationFrame(animate)
     },
     scrollToElement: function (element) {
@@ -32,7 +32,7 @@
         .start()
     },
     bindEvents: function () {
-      let aTags = this.view.querySelector('ul > li > a')
+      let aTags = this.view.querySelectorAll('ul > li > a')
       for (let i = 0; i < aTags.length; i++) {
         aTags[i].onclick = function (e) {
           e.preventDefault()
@@ -41,9 +41,9 @@
           // a.href 是浏览器解析后的带HTTP的地址,不是我想要的地址 这里得到的结果是 '#siteAbout'
           // let element = document.querySelector(href)
           // let top= element.offsetTop  // 获取对应锚点距离浏览器高度
-          let element = document.querySelector(e.currentTarget.getAttribute('href')).offsetTop
+          let element = document.querySelector(e.currentTarget.getAttribute('href'))
           this.scrollToElement(element)
-        }
+        }.bind(this)
       }
     },
   }
