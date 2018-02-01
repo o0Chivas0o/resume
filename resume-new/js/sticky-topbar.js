@@ -16,7 +16,7 @@
     //   view = this.view
     //   window.addEventListener('scroll', function (e) {
     //     window.scrollY > 0 ? this.active() : this.deActive()
-    //   })
+    //   }.bind(this))
     // },
     active: function () {
       this.view.classList.add('sticky')
