@@ -8,7 +8,6 @@
   setTimeout(() => {
     findClosestAndRemoveOffset()
   }, 300)
-
   window.addEventListener('scroll', () => {
     findClosestAndRemoveOffset()
   })
@@ -39,7 +38,7 @@
     li.classList.add('highlight')
   }
 
-// 二级菜单展示
+  // 二级菜单展示
   let liTags = document.querySelectorAll('nav.menu > ul > li')
   for (let i = 0; i < liTags.length; i++) {
     liTags[i].onmouseenter = function (e) {
