@@ -37,10 +37,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">博客</a>
+                    <a href="#siteMessage">留言板</a>
                 </li>
                 <li>
-                    <a href="#">日历</a>
+                    <a href="#">博客</a>
                 </li>
                 <li>
                     <a href="#">联系方式</a>
@@ -174,15 +174,13 @@
         </div>
     </div>
 </section>
-<section class="message">
+<section data-x id="siteMessage" class="message">
     <h2>留言板</h2>
     <ol id="messageList">
     </ol>
     <form id="postMessage">
-        <label for="postMessage">昵称</label>
-        <input type="text" name="user">
-        <label for="postMessage">内容</label>
-        <input type="text" name="content">
+        <label>昵称<input type="text" name="user" id="messageUser"></label>
+        <label>内容<input type="text" name="content" id="messageContent"></label>
         <input type="submit" value="提交">
     </form>
 </section>
