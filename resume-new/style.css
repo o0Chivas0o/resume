@@ -52,8 +52,10 @@ main .downloadResume{font-size: 14px;line-height: 16px;padding: 21px 55px;border
 main .downloadResume:hover {box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.2);}
 .selfIntroduction {max-width: 940px;margin-left: auto;margin-right: auto;text-align: center;font-family: kai;line-height: 1.8;font-size: 18px;}
 section.skills,
-section.portfolio{max-width: 940px;margin-left: auto;margin-right: auto;margin-top: 60px;}
+section.message,
+section.portfolio{max-width: 940px;margin:60px auto 0 auto}
 section.skills > h2 ,
+section.message >h2 ,
 section.portfolio > h2 {text-align: center;color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;}
 section.skills h3 {font-size: 14px;line-height: 1.1;padding-right: 40px;}
 section.skills > ol {background: white;box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);padding: 42px 50px 10px;margin-top: 30px;}
@@ -68,3 +70,6 @@ section.portfolio .swiper-container {width: 900px;height: 450px;position: relati
 section.portfolio .swiper-container .swiper-button-prev,.swiper-button-next{position: absolute;bottom:50%;}
 section.portfolio .swiper-button-prev{left: -80px;width: 64px;height: 64px;background-color: white;border-radius: 50%}
 section.portfolio .swiper-button-next{right: -80px;width: 64px;height: 64px;background-color: white;  border-radius: 50%}
+section.message > ol{max-width: 940px;margin: 50px auto;border-top: 1px solid #DDD;}
+section.message > ol > li {padding: 16px;border-bottom: 1px solid #DDD;}
+section.message > form{max-width: 400px;margin: 50px auto;}

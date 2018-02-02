@@ -174,14 +174,17 @@
         </div>
     </div>
 </section>
-<section>
+<section class="message">
     <h2>留言板</h2>
+    <ol id="messageList">
+    </ol>
     <form id="postMessage">
+        <label for="postMessage">昵称</label>
+        <input type="text" name="user">
+        <label for="postMessage">内容</label>
         <input type="text" name="content">
         <input type="submit" value="提交">
     </form>
-    <ol id="messageList">
-    </ol>
 </section>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
