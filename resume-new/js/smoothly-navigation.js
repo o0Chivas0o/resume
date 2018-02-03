@@ -1,5 +1,5 @@
 !function () {
-  let view = document.querySelector('nav.menu')
+  let view = View('nav.menu')
   let controller = {
     view: null,
     aTags: null,
