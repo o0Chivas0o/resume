@@ -11,6 +11,9 @@
 </head>
 <html>
 <body>
+<div id="siteWelcome" class="site-welcome active">
+    <div class="loading"></div>
+</div>
 <div id="topNavBar" class="topNavBar">
     <div class="topNavBar-inner clearfix">
         <a class="logo" href="#" style="float: left;">
@@ -35,9 +38,6 @@
                 </li>
                 <li>
                     <a href="#siteMessage">Message</a>
-                </li>
-                <li>
-                    <a href="#">Blog</a>
                 </li>
                 <li>
                     <a href="#">Content</a>
@@ -77,25 +77,28 @@
                         <dt>所在城市</dt>
                         <dd>武汉</dd>
                         <dt>邮箱</dt>
-                        <dd>dwight_lee@foxmail.com</dd>
+                        <dd><a href="mailto:dwight_lee@foxmail.com">dwight_lee@foxmail.com</a></dd>
                         <dt>手机</dt>
                         <dd>18171019629</dd>
+                        <dt>博客</dt>
+                        <dd><a href="https://o0chivas0o.github.io/" target="_blank">https://o0chivas0o.github.io/</a>
+                        </dd>
                     </dl>
                 </div>
             </div>
         </div>
         <footer class="media">
-            <a href="#">
+            <a href="https://github.com/o0Chivas0o">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-github1"></use>
                 </svg>
             </a>
-            <a href="#">
+            <a href="https://www.zhihu.com/people/lzy-/activities">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-zhihu-copy"></use>
                 </svg>
             </a>
-            <a href="#">
+            <a href="https://weibo.com/u/5240253819/home?wvr=5&sudaref=security.weibo.com">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-weibo1"></use>
                 </svg>
@@ -172,19 +175,24 @@
     </div>
 </section>
 <section data-x id="siteMessage" class="message">
+
     <h2>留言板</h2>
     <ol id="messageList">
     </ol>
     <form id="postMessage">
         <label>昵称<input type="text" name="user" id="messageUser"></label>
         <label>内容<input type="text" name="content" id="messageContent"></label>
-        <input type="submit" value="提交">
+        <input type="submit" value="提交" class="submit">
     </form>
 </section>
+<script src="//unpkg.com/element-ui/lib/index.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
 <script src="//cdn1.lncld.net/static/js/3.5.0/av-min.js"></script>
-<script src="//at.alicdn.com/t/font_421276_y06e2a9jul0izfr.js"></script>
+<script src="./js/base/View.js"></script>
+<script src="./js/base/Model.js"></script>
+<script src="./js/base/Controller.js"></script>
+<script src="./js/remove-loading.js"></script>
 <script src="./js/init-swiper.js"></script>
 <script src="./js/auto-slide-up.js"></script>
 <script src="./js/sticky-topbar.js"></script>
