@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
-    <link rel="stylesheet" href="./loading.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./vendors/swiper.min.css">
 </head>
 <html>
 <body>
@@ -164,9 +161,9 @@
     <div id="mySlide">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <img src="./img/project-img/163-music.jpg" class="swiper-slide">
-                <img src="./img/project-img/canvas.jpg" class="swiper-slide">
-                <img src="./img/project-img/pikachu.jpg" class="swiper-slide">
+                <a href="" class="swiper-slide">网易云音乐web端<img src="./img/project-img/163-music.jpg"></a>
+                <a href="" class="swiper-slide">canvas画板<img src="./img/project-img/canvas.jpg"></a>
+                <a href="" class="swiper-slide">画一只皮卡丘<img src="./img/project-img/pikachu.jpg"></a>
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
@@ -175,29 +172,26 @@
     </div>
 </section>
 <section data-x id="siteMessage" class="message">
-
     <h2>留言板</h2>
     <ol id="messageList">
     </ol>
     <form id="postMessage">
-        <label>昵称<input type="text" name="user" id="messageUser"></label>
-        <label>内容<input type="text" name="content" id="messageContent"></label>
-        <input type="submit" value="提交" class="submit">
+        <label><input type="text" name="user" id="messageUser" placeholder="Name">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-message"></use>
+            </svg></label>
+        <label><input type="text" name="content" id="messageContent" placeholder="Message">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-01"></use>
+            </svg></label>
+        <input type="submit" value="Send" class="submit">
     </form>
 </section>
-<script src="//unpkg.com/element-ui/lib/index.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
-<script src="//cdn1.lncld.net/static/js/3.5.0/av-min.js"></script>
-<script src="./js/base/View.js"></script>
-<script src="./js/base/Model.js"></script>
-<script src="./js/base/Controller.js"></script>
-<script src="./js/remove-loading.js"></script>
-<script src="./js/init-swiper.js"></script>
-<script src="./js/auto-slide-up.js"></script>
-<script src="./js/sticky-topbar.js"></script>
-<script src="./js/smoothly-navigation.js"></script>
-<script src="./js/message.js"></script>
+<script src="//at.alicdn.com/t/font_421276_ztw9rzl9f98p8pvi.js"></script>
+<script src="./vendors/Tween.js"></script>
+<script src="./vendors/swiper.min.js"></script>
+<script src="./vendors/av-min.js"></script>
+<script src="./dist/bundle.js"></script>
 </body>
 </html>
 
