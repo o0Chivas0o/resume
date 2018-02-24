@@ -1,3 +1,5 @@
+import './css/loading.scss'
+import './css/style.scss'
 import View from './js/View'
 import Model from './js/Model'
 import Controller from './js/Controller'
@@ -7,8 +9,7 @@ import message from './js/message'
 import initSwpier from './js/init-swiper'
 import smoothlyNavigation from './js/smoothly-navigation'
 import stickyTopBar from './js/sticky-topbar'
-import './css/loading.scss'
-import './css/style.scss'
+
 
 
 View()
