@@ -323,16 +323,63 @@ section.portfolio {
 
 section.message ol {
   max-width: 940px;
-  margin: 50px auto;
-  border-top: 1px solid #DDD; }
+  margin: 50px auto; }
   section.message ol li {
-    padding: 16px;
-    border-bottom: 1px solid #DDD; }
+    border: 1px solid #DDDDDD;
+    background: white;
+    position: relative;
+    margin: 10px auto;
+    box-shadow: 1px 1px 2px 0 rgba(201, 201, 201, 0.8); }
+    section.message ol li p {
+      font-size: 16px;
+      padding-bottom: 60px;
+      color: rgba(0, 0, 0, 0.8); }
+    section.message ol li h3 {
+      color: rgba(0, 0, 0, 0.8);
+      position: absolute;
+      font-size: 18px;
+      bottom: 0;
+      right: 0; }
 
 section.message form {
-  max-width: 400px;
-  margin: 50px auto;
-  margin-bottom: 300px; }
+  max-width: 940px;
+  margin: 50px auto 300px auto; }
+  section.message form .name {
+    position: relative;
+    width: 100%; }
+    section.message form .name input {
+      outline: none;
+      width: 40%;
+      padding: 15px; }
+    section.message form .name svg {
+      position: absolute;
+      top: 0;
+      right: 5%;
+      width: 24px;
+      height: 24px; }
+  section.message form .message {
+    position: relative;
+    width: 100%; }
+    section.message form .message input {
+      outline: none;
+      width: 40%;
+      padding: 15px; }
+    section.message form .message svg {
+      position: absolute;
+      top: 0;
+      right: 5%;
+      width: 24px;
+      height: 24px; }
+  section.message form .submit {
+    width: 11%;
+    padding: 16px;
+    background: #e86766;
+    color: white;
+    outline: none;
+    float: right;
+    border: none;
+    display: block;
+    margin: 0; }
 
 @keyframes menuSlide {
   0% {

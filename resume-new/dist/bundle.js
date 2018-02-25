@@ -212,7 +212,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(14);
+var	fixUrls = __webpack_require__(5);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -534,45 +534,45 @@ function updateLink (link, options, obj) {
 "use strict";
 
 
-var _View = __webpack_require__(3);
+__webpack_require__(3);
+
+__webpack_require__(6);
+
+var _View = __webpack_require__(8);
 
 var _View2 = _interopRequireDefault(_View);
 
-var _Model = __webpack_require__(4);
+var _Model = __webpack_require__(9);
 
 var _Model2 = _interopRequireDefault(_Model);
 
-var _Controller = __webpack_require__(5);
+var _Controller = __webpack_require__(10);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _removeLoading = __webpack_require__(6);
+var _removeLoading = __webpack_require__(11);
 
 var _removeLoading2 = _interopRequireDefault(_removeLoading);
 
-var _autoSlideUp = __webpack_require__(7);
+var _autoSlideUp = __webpack_require__(12);
 
 var _autoSlideUp2 = _interopRequireDefault(_autoSlideUp);
 
-var _message = __webpack_require__(8);
+var _message = __webpack_require__(13);
 
 var _message2 = _interopRequireDefault(_message);
 
-var _initSwiper = __webpack_require__(9);
+var _initSwiper = __webpack_require__(14);
 
 var _initSwiper2 = _interopRequireDefault(_initSwiper);
 
-var _smoothlyNavigation = __webpack_require__(10);
+var _smoothlyNavigation = __webpack_require__(15);
 
 var _smoothlyNavigation2 = _interopRequireDefault(_smoothlyNavigation);
 
-var _stickyTopbar = __webpack_require__(11);
+var _stickyTopbar = __webpack_require__(16);
 
 var _stickyTopbar2 = _interopRequireDefault(_stickyTopbar);
-
-__webpack_require__(12);
-
-__webpack_require__(15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -590,402 +590,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  window.View = function (view) {
-    return document.querySelector(view);
-  };
-};
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  window.Model = function (options) {
-    var resourceName = options.resourceName;
-    return {
-      init: function init() {
-        var APP_ID = 'JLMh9Uyk8yngdHl7RjiKtBvJ-gzGzoHsz';
-        var APP_KEY = 'eFTOCJrbFsKTdigcxbv3jRog';
-        AV.init({ appId: APP_ID, appKey: APP_KEY });
-      },
-      fetch: function fetch() {
-        var query = new AV.Query(resourceName);
-        return query.find();
-      },
-      save: function save(object) {
-        var X = AV.Object.extend(resourceName);
-        var x = new X();
-        return x.save(object);
-      }
-    };
-  };
-};
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  window.Controller = function (options) {
-    var _init = options.init; // B
-
-    var object = {
-      view: null,
-      model: null,
-      init: function init(view, model) {
-        // A
-        this.view = view;
-        this.model = model;
-        this.model.init();
-        _init.call(this, view, model); //
-        this.bindEvents.call(this);
-      }
-    };
-    for (var key in options) {
-      if (key !== 'init') {
-        object[key] = options[key];
-      }
-    }
-    return object;
-  };
-};
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  return !function () {
-    var view = View('#siteWelcome');
-    var controller = {
-      view: null,
-      init: function init(view) {
-        this.view = view;
-        this.deActive();
-      },
-      deActive: function deActive() {
-        this.view.classList.remove('active');
-      }
-    };
-    controller.init(view);
-  }.call();
-};
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  return !function () {
-    // 添加 offset 类
-    var specialTags = document.querySelectorAll('[data-x]');
-    for (var i = 0; i < specialTags.length; i++) {
-      specialTags[i].classList.add('offset');
-    }
-
-    setTimeout(function () {
-      findClosestAndRemoveOffset();
-    }, 300);
-    window.addEventListener('scroll', function () {
-      findClosestAndRemoveOffset();
-    });
-
-    /*helper*/
-    function findClosestAndRemoveOffset() {
-      // 滚动到对应锚点 二级菜单对应标签高亮
-      var specialTags = document.querySelectorAll('[data-x]');
-      var minIndex = 0;
-      for (var _i = 0; _i < specialTags.length; _i++) {
-        if (Math.abs(specialTags[_i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
-          minIndex = _i;
-        }
-      }
-      // 去除默认offset类
-      specialTags[minIndex].classList.remove('offset');
-
-      var id = specialTags[minIndex].id;
-      var a = document.querySelector('a[href="#' + id + '"]');
-      var li = a.parentNode;
-      var siblings = li.parentNode.children;
-      // 找到最近的类
-
-      // 给二级菜单添加highlight类
-      for (var _i2 = 0; _i2 < siblings.length; _i2++) {
-        siblings[_i2].classList.remove('highlight');
-      }
-      li.classList.add('highlight');
-    }
-
-    // 二级菜单展示
-    var liTags = document.querySelectorAll('nav.menu > ul > li');
-    for (var _i3 = 0; _i3 < liTags.length; _i3++) {
-      liTags[_i3].onmouseenter = function (e) {
-        e.currentTarget.classList.add('active');
-      };
-      liTags[_i3].onmouseleave = function (e) {
-        e.currentTarget.classList.remove('active');
-      };
-    }
-  }.call();
-};
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  return !function () {
-    var view = View('section.message');
-    var model = Model({ resourceName: 'Message' });
-    var controller = Controller({
-      form: null,
-      messageList: null,
-      init: function init(view, model) {
-        this.messageList = view.querySelector('#messageList');
-        this.form = view.querySelector('#postMessage');
-        this.loadMessages();
-      },
-      loadMessages: function loadMessages() {
-        var _this = this;
-
-        this.model.fetch().then(function (messages) {
-          var array = messages.map(function (item) {
-            return item.attributes;
-          });
-          array.forEach(function (item) {
-            var li = document.createElement('li');
-            li.innerText = item.user + ' : ' + item.content;
-            _this.messageList.append(li);
-          });
-        });
-      },
-      bindEvents: function bindEvents() {
-        var _this2 = this;
-
-        this.form.addEventListener('submit', function (e) {
-          // 监听表单防止 监听submit落空
-          e.preventDefault();
-          _this2.saveMessage();
-        });
-      },
-      saveMessage: function saveMessage() {
-        var myForm = this.form;
-        var user = myForm.querySelector('#messageUser').value;
-        var content = myForm.querySelector('#messageContent').value;
-        this.model.save({ user: user, content: content }).then(function (object) {
-          var li = document.createElement('li');
-          if (object.attributes.user !== '' && object.attributes.content !== '') {
-            li.innerText = object.attributes.user + ': ' + object.attributes.content;
-            var messageList = document.querySelector('#messageList');
-            messageList.append(li);
-            myForm.querySelector('#messageUser').value = '';
-            myForm.querySelector('#messageContent').value = '';
-          }
-        });
-      }
-    });
-    controller.init(view, model);
-  }.call();
-};
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  return !function () {
-    var view = View('#mySlide');
-    var controller = {
-      view: null,
-      swiper: null,
-      swiperOptions: {
-        loop: true,
-        effect: 'flip',
-        grabCursor: true,
-        pagination: {
-          el: '.swiper-pagination'
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
-      },
-      init: function init(view) {
-        this.view = view;
-        this.initSwiper();
-      },
-      initSwiper: function initSwiper() {
-        this.swiper = new Swiper(this.view.querySelector('.swiper-container'), this.swiperOptions);
-      }
-    };
-    controller.init(view);
-  }.call();
-};
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  return !function () {
-    var view = View('nav.menu');
-    var controller = {
-      view: null,
-      aTags: null,
-      init: function init(view) {
-        this.view = view;
-        this.initAnimation();
-        this.bindEvents();
-      },
-      initAnimation: function initAnimation() {
-        function animate(time) {
-          requestAnimationFrame(animate);
-          TWEEN.update(time);
-        }
-        requestAnimationFrame(animate);
-      },
-      scrollToElement: function scrollToElement(element) {
-        var top = element.offsetTop;
-        var currentTop = window.scrollY;
-        var targetTop = top - 80;
-        var s = targetTop - currentTop;
-        var t = Math.abs(s / 100 * 300);
-        if (t > 500) {
-          t = 500;
-        }
-        var coords = { y: currentTop };
-        var tween = new TWEEN.Tween(coords).to({ y: targetTop }, t).easing(TWEEN.Easing.Quadratic.InOut).onUpdate(function () {
-          window.scrollTo(0, coords.y);
-        }).start();
-      },
-      bindEvents: function bindEvents() {
-        var aTags = this.view.querySelectorAll('ul > li > a');
-        for (var i = 0; i < aTags.length; i++) {
-          aTags[i].onclick = function (e) {
-            e.preventDefault();
-            // let a = e.currentTarget
-            // let href = a.getAttribute('href')
-            // a.href 是浏览器解析后的带HTTP的地址,不是我想要的地址 这里得到的结果是 '#siteAbout'
-            // let element = document.querySelector(href)
-            // let top= element.offsetTop  // 获取对应锚点距离浏览器高度
-            var element = document.querySelector(e.currentTarget.getAttribute('href'));
-            this.scrollToElement(element);
-          }.bind(this);
-        }
-      }
-    };
-    controller.init(view);
-  }.call();
-};
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  return !function () {
-    var view = View('#topNavBar');
-    var controller = {
-      view: null,
-      init: function init(view) {
-        this.view = view;
-        this.bindEvents(); // this.bindEvents.call(this)
-      },
-      bindEvents: function bindEvents() {
-        var _this = this;
-
-        view = this.view;
-        window.addEventListener('scroll', function () {
-          window.scrollY > 0 ? _this.active() : _this.deActive();
-        });
-      },
-      // bindEvents: function () {
-      //   view = this.view
-      //   window.addEventListener('scroll', function (e) {
-      //     window.scrollY > 0 ? this.active() : this.deActive()
-      //   }.bind(this))
-      // },
-      active: function active() {
-        this.view.classList.add('sticky');
-      },
-      deActive: function deActive() {
-        this.view.classList.remove('sticky');
-      }
-    };
-    controller.init(view); // controller.init.call(controller, view)
-  }.call();
-};
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(13);
+var content = __webpack_require__(4);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1031,7 +637,7 @@ if(false) {
 }
 
 /***/ }),
-/* 13 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -1045,7 +651,7 @@ exports.push([module.i, ".loading{width:40px;height:40px;position:relative;margi
 
 
 /***/ }),
-/* 14 */
+/* 5 */
 /***/ (function(module, exports) {
 
 
@@ -1140,11 +746,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 15 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(16);
+var content = __webpack_require__(7);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -1190,7 +796,7 @@ if(false) {
 }
 
 /***/ }),
-/* 16 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(false);
@@ -1198,10 +804,419 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "body{background:#efefef;margin:0;overflow:auto}a{color:inherit;text-decoration:none}*{margin:0;padding:0}hr{height:0;border:none;border-top:1px solid #dedede}ol,ul{list-style:none}h1,h2,h3,h4,h5,h6{font-weight:400}[data-x].offset{transform:translateY(100px);opacity:0}[data-x]{transform:translate(0);opacity:1;transition:all .5s}.icon{width:1em;height:1em;vertical-align:-.15em;fill:currentColor;overflow:hidden}.clearfix:after{content:\"\";display:block;clear:both}.site-welcome{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#ddd;z-index:1;justify-content:center;align-items:center}.site-welcome.active{display:flex}.topNavBar.sticky{background:#fff;padding:10px 0;z-index:1;box-shadow:0 0 15px rgba(0,0,0,.5);color:#3d4451}.topNavBar-inner{padding:0 16px}.topNavBar{padding:20px 0;position:fixed;top:0;left:0;width:100%;transition:all .5s;color:#b7b7b7}.topNavBar nav{padding-top:5px}.topNavBar nav ul{list-style:none;margin:0;padding:0}.topNavBar nav ul li{float:left;margin-left:17px;margin-right:17px;position:relative}.topNavBar nav ul li a{font-size:16px;color:inherit;font-weight:700;border-top:3px solid transparent;border-bottom:3px solid transparent;padding-top:5px;padding-bottom:5px;display:block;position:relative;font-family:monospace,Menlo}.topNavBar .submenu{display:none;position:absolute;top:100%;right:0;background:#fff;color:#3d4451;box-shadow:0 0 5px rgba(0,0,0,.5)}.topNavBar .submenu>li{white-space:nowrap;padding:5px 10px}.topNavBar .logo{font-size:24px;font-family:Arial Black;padding-top:3px;padding-bottom:4px}.topNavBar .logo .rs{margin-right:4px;color:#e6686a}.topNavBar .logo .card{color:#9a9da2}.topNavBar nav>ul>li.active>a:after,.topNavBar nav>ul>li.highlight>a:after{content:\"\";display:block;background:#e06567;position:absolute;top:100%;left:0;height:3px;width:100%;animation:a .3s linear}.topNavBar li.active>.submenu{display:block;animation:b .3s}.banner{height:515px;background-image:url(https://i.loli.net/2018/02/24/5a917d5812a64.jpg);background-position:50%;background-size:cover}.banner .mask{height:515px;background-color:rgba(0,0,0,.5)}.userCard{max-width:940px;margin-left:auto;margin-right:auto;background-color:#fff;box-shadow:0 1px 5px 0 rgba(0,0,0,.5)}.userCard .welcome{background:#e6686a;color:#fff;display:inline-block;padding:4px 16px;line-height:22px;position:relative;margin-bottom:10px}.userCard .welcome .triangle{display:block;border:10px solid transparent;width:0;border-left-color:#e6686a;border-top-width:0;position:absolute;left:4px;top:100%}.userCard .picture{float:left}.userCard .text{float:left;margin-left:65px;width:470px}.userCard .text h1{margin-top:18px}.userCard .text hr{margin:20px 0}.userCard .pictureAndText{padding:50px}.userCard footer.media{background:#e6686a;text-align:center}.userCard footer.media a{display:inline-block;width:40px;line-height:30px;padding:5px 0;border-radius:50%;margin:16px}.userCard footer.media a:hover{background:#cf5d5f}.userCard .icon{width:30px;height:30px;fill:#fff;vertical-align:top}.userCard dl dd,.userCard dl dt{float:left;padding:5px 0}.userCard dl dt{width:30%;font-weight:700}.userCard dl dd{width:70%;color:#9da0a7}main{margin-top:-340px}main .downloadResume-wrapper{text-align:center}main .downloadResume{font-size:14px;line-height:16px;padding:21px 55px;border:1px solid #cdcfd1;background:#efefef;display:inline-block;border-radius:2px;color:#3d4451;font-weight:700;margin:32px 0;transition:box-shadow .2s}main .downloadResume:hover{box-shadow:0 4px 13px 0 rgba(0,0,0,.2)}.selfIntroduction{max-width:940px;margin-left:auto;margin-right:auto;text-align:center;font-family:kai;line-height:1.8;font-size:18px}section.message,section.portfolio,section.skills{max-width:940px;margin:60px auto 0}section.message>h2,section.portfolio>h2,section.skills>h2{text-align:center;color:#3d4451;font-size:34px;line-height:1.2;font-weight:600}section.skills h3{font-size:14px;line-height:1.1;padding-right:40px}section.skills ol{background:#fff;box-shadow:0 1px 5px 0 rgba(0,0,0,.5);padding:42px 50px 10px;margin-top:30px}section.skills ol li{float:left;width:48%;box-sizing:border-box}section.skills ol li:nth-child(2n){float:right}section.skills .progressBar{height:5px;background:#fae1e1;border-radius:2px;margin:4px 0 40px;overflow:hidden}section.skills .progressBar .progress{height:100%;background:#e6686a;width:70%;border-radius:2px;transform:translateX(0);transition:all 1s}section.skills.offset .progressBar>.progress{transform:translateX(-100%)}section.portfolio{text-align:center;height:650px}section.portfolio,section.portfolio h2{margin-bottom:100px}section.portfolio .swiper-container{width:900px;height:450px;position:relative}section.portfolio .swiper-container .swiper-wrapper .swiper-slide{position:relative}section.portfolio .swiper-container .swiper-wrapper .swiper-slide img{height:450px;width:900px}section.portfolio .swiper-container .swiper-button-next,section.portfolio .swiper-container .swiper-button-prev{position:absolute;bottom:50%}section.portfolio .swiper-container .swiper-button-prev{left:-80px;width:64px;height:64px;background-color:#fff;border-radius:50%}section.portfolio .swiper-container .swiper-button-next{right:-80px;width:64px;height:64px;background-color:#fff;border-radius:50%}section.message ol{max-width:940px;margin:50px auto;border-top:1px solid #ddd}section.message ol li{padding:16px;border-bottom:1px solid #ddd}section.message form{max-width:400px;margin:50px auto;margin-bottom:300px}@keyframes a{0%{width:0}to{width:100%}}@keyframes b{0%{transform:translateX(-50%);opacity:0}to{transform:translateX(0);opacity:1}}", ""]);
+exports.push([module.i, "body{background:#efefef;margin:0;overflow:auto}a{color:inherit;text-decoration:none}*{margin:0;padding:0}hr{height:0;border:none;border-top:1px solid #dedede}ol,ul{list-style:none}h1,h2,h3,h4,h5,h6{font-weight:400}[data-x].offset{transform:translateY(100px);opacity:0}[data-x]{transform:translate(0);opacity:1;transition:all .5s}.icon{width:1em;height:1em;vertical-align:-.15em;fill:currentColor;overflow:hidden}.clearfix:after{content:\"\";display:block;clear:both}.site-welcome{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#ddd;z-index:1;justify-content:center;align-items:center}.site-welcome.active{display:flex}.topNavBar.sticky{background:#fff;padding:10px 0;z-index:1;box-shadow:0 0 15px rgba(0,0,0,.5);color:#3d4451}.topNavBar-inner{padding:0 16px}.topNavBar{padding:20px 0;position:fixed;top:0;left:0;width:100%;transition:all .5s;color:#b7b7b7}.topNavBar nav{padding-top:5px}.topNavBar nav ul{list-style:none;margin:0;padding:0}.topNavBar nav ul li{float:left;margin-left:17px;margin-right:17px;position:relative}.topNavBar nav ul li a{font-size:16px;color:inherit;font-weight:700;border-top:3px solid transparent;border-bottom:3px solid transparent;padding-top:5px;padding-bottom:5px;display:block;position:relative;font-family:monospace,Menlo}.topNavBar .submenu{display:none;position:absolute;top:100%;right:0;background:#fff;color:#3d4451;box-shadow:0 0 5px rgba(0,0,0,.5)}.topNavBar .submenu>li{white-space:nowrap;padding:5px 10px}.topNavBar .logo{font-size:24px;font-family:Arial Black;padding-top:3px;padding-bottom:4px}.topNavBar .logo .rs{margin-right:4px;color:#e6686a}.topNavBar .logo .card{color:#9a9da2}.topNavBar nav>ul>li.active>a:after,.topNavBar nav>ul>li.highlight>a:after{content:\"\";display:block;background:#e06567;position:absolute;top:100%;left:0;height:3px;width:100%;animation:a .3s linear}.topNavBar li.active>.submenu{display:block;animation:b .3s}.banner{height:515px;background-image:url(https://i.loli.net/2018/02/24/5a917d5812a64.jpg);background-position:50%;background-size:cover}.banner .mask{height:515px;background-color:rgba(0,0,0,.5)}.userCard{max-width:940px;margin-left:auto;margin-right:auto;background-color:#fff;box-shadow:0 1px 5px 0 rgba(0,0,0,.5)}.userCard .welcome{background:#e6686a;color:#fff;display:inline-block;padding:4px 16px;line-height:22px;position:relative;margin-bottom:10px}.userCard .welcome .triangle{display:block;border:10px solid transparent;width:0;border-left-color:#e6686a;border-top-width:0;position:absolute;left:4px;top:100%}.userCard .picture{float:left}.userCard .text{float:left;margin-left:65px;width:470px}.userCard .text h1{margin-top:18px}.userCard .text hr{margin:20px 0}.userCard .pictureAndText{padding:50px}.userCard footer.media{background:#e6686a;text-align:center}.userCard footer.media a{display:inline-block;width:40px;line-height:30px;padding:5px 0;border-radius:50%;margin:16px}.userCard footer.media a:hover{background:#cf5d5f}.userCard .icon{width:30px;height:30px;fill:#fff;vertical-align:top}.userCard dl dd,.userCard dl dt{float:left;padding:5px 0}.userCard dl dt{width:30%;font-weight:700}.userCard dl dd{width:70%;color:#9da0a7}main{margin-top:-340px}main .downloadResume-wrapper{text-align:center}main .downloadResume{font-size:14px;line-height:16px;padding:21px 55px;border:1px solid #cdcfd1;background:#efefef;display:inline-block;border-radius:2px;color:#3d4451;font-weight:700;margin:32px 0;transition:box-shadow .2s}main .downloadResume:hover{box-shadow:0 4px 13px 0 rgba(0,0,0,.2)}.selfIntroduction{max-width:940px;margin-left:auto;margin-right:auto;text-align:center;font-family:kai;line-height:1.8;font-size:18px}section.message,section.portfolio,section.skills{max-width:940px;margin:60px auto 0}section.message>h2,section.portfolio>h2,section.skills>h2{text-align:center;color:#3d4451;font-size:34px;line-height:1.2;font-weight:600}section.skills h3{font-size:14px;line-height:1.1;padding-right:40px}section.skills ol{background:#fff;box-shadow:0 1px 5px 0 rgba(0,0,0,.5);padding:42px 50px 10px;margin-top:30px}section.skills ol li{float:left;width:48%;box-sizing:border-box}section.skills ol li:nth-child(2n){float:right}section.skills .progressBar{height:5px;background:#fae1e1;border-radius:2px;margin:4px 0 40px;overflow:hidden}section.skills .progressBar .progress{height:100%;background:#e6686a;width:70%;border-radius:2px;transform:translateX(0);transition:all 1s}section.skills.offset .progressBar>.progress{transform:translateX(-100%)}section.portfolio{text-align:center;height:650px}section.portfolio,section.portfolio h2{margin-bottom:100px}section.portfolio .swiper-container{width:900px;height:450px;position:relative}section.portfolio .swiper-container .swiper-wrapper .swiper-slide{position:relative}section.portfolio .swiper-container .swiper-wrapper .swiper-slide img{height:450px;width:900px}section.portfolio .swiper-container .swiper-button-next,section.portfolio .swiper-container .swiper-button-prev{position:absolute;bottom:50%}section.portfolio .swiper-container .swiper-button-prev{left:-80px;width:64px;height:64px;background-color:#fff;border-radius:50%}section.portfolio .swiper-container .swiper-button-next{right:-80px;width:64px;height:64px;background-color:#fff;border-radius:50%}section.message ol{max-width:940px;margin:50px auto}section.message ol li{border:1px solid #ddd;background:#fff;position:relative;margin:10px auto;box-shadow:1px 1px 2px 0 hsla(0,0%,79%,.8)}section.message ol li p{font-size:16px;padding-bottom:60px;color:rgba(0,0,0,.8)}section.message ol li h3{color:rgba(0,0,0,.8);position:absolute;font-size:18px;bottom:0;right:0}section.message form{max-width:940px;margin:50px auto 300px}section.message form .name{position:relative;width:100%}section.message form .name input{outline:none;width:40%;padding:15px}section.message form .name svg{position:absolute;top:0;right:5%;width:24px;height:24px}section.message form .message{position:relative;width:100%}section.message form .message input{outline:none;width:40%;padding:15px}section.message form .message svg{position:absolute;top:0;right:5%;width:24px;height:24px}section.message form .submit{width:11%;padding:16px;background:#e86766;color:#fff;outline:none;float:right;border:none;display:block;margin:0}@keyframes a{0%{width:0}to{width:100%}}@keyframes b{0%{transform:translateX(-50%);opacity:0}to{transform:translateX(0);opacity:1}}", ""]);
 
 // exports
 
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  window.View = function (view) {
+    return document.querySelector(view);
+  };
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  window.Model = function (options) {
+    var resourceName = options.resourceName;
+    return {
+      init: function init() {
+        var APP_ID = 'JLMh9Uyk8yngdHl7RjiKtBvJ-gzGzoHsz';
+        var APP_KEY = 'eFTOCJrbFsKTdigcxbv3jRog';
+        AV.init({ appId: APP_ID, appKey: APP_KEY });
+      },
+      fetch: function fetch() {
+        var query = new AV.Query(resourceName);
+        return query.find();
+      },
+      save: function save(object) {
+        var X = AV.Object.extend(resourceName);
+        var x = new X();
+        return x.save(object);
+      }
+    };
+  };
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  window.Controller = function (options) {
+    var _init = options.init; // B
+
+    var object = {
+      view: null,
+      model: null,
+      init: function init(view, model) {
+        // A
+        this.view = view;
+        this.model = model;
+        this.model.init();
+        _init.call(this, view, model); //
+        this.bindEvents.call(this);
+      }
+    };
+    for (var key in options) {
+      if (key !== 'init') {
+        object[key] = options[key];
+      }
+    }
+    return object;
+  };
+};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  return !function () {
+    var view = View('#siteWelcome');
+    var controller = {
+      view: null,
+      init: function init(view) {
+        this.view = view;
+        this.deActive();
+      },
+      deActive: function deActive() {
+        this.view.classList.remove('active');
+      }
+    };
+    controller.init(view);
+  }.call();
+};
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  return !function () {
+    // 添加 offset 类
+    var specialTags = document.querySelectorAll('[data-x]');
+    for (var i = 0; i < specialTags.length; i++) {
+      specialTags[i].classList.add('offset');
+    }
+
+    setTimeout(function () {
+      findClosestAndRemoveOffset();
+    }, 300);
+    window.addEventListener('scroll', function () {
+      findClosestAndRemoveOffset();
+    });
+
+    /*helper*/
+    function findClosestAndRemoveOffset() {
+      // 滚动到对应锚点 二级菜单对应标签高亮
+      var specialTags = document.querySelectorAll('[data-x]');
+      var minIndex = 0;
+      for (var _i = 0; _i < specialTags.length; _i++) {
+        if (Math.abs(specialTags[_i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+          minIndex = _i;
+        }
+      }
+      // 去除默认offset类
+      specialTags[minIndex].classList.remove('offset');
+
+      var id = specialTags[minIndex].id;
+      var a = document.querySelector('a[href="#' + id + '"]');
+      var li = a.parentNode;
+      var siblings = li.parentNode.children;
+      // 找到最近的类
+
+      // 给二级菜单添加highlight类
+      for (var _i2 = 0; _i2 < siblings.length; _i2++) {
+        siblings[_i2].classList.remove('highlight');
+      }
+      li.classList.add('highlight');
+    }
+
+    // 二级菜单展示
+    var liTags = document.querySelectorAll('nav.menu > ul > li');
+    for (var _i3 = 0; _i3 < liTags.length; _i3++) {
+      liTags[_i3].onmouseenter = function (e) {
+        e.currentTarget.classList.add('active');
+      };
+      liTags[_i3].onmouseleave = function (e) {
+        e.currentTarget.classList.remove('active');
+      };
+    }
+  }.call();
+};
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  return !function () {
+    var view = View('section.message');
+    var model = Model({ resourceName: 'Message' });
+    var controller = Controller({
+      form: null,
+      messageList: null,
+      init: function init(view, model) {
+        this.messageList = view.querySelector('#messageList');
+        this.form = view.querySelector('#postMessage');
+        this.loadMessages();
+      },
+      loadMessages: function loadMessages() {
+        var _this = this;
+
+        this.model.fetch().then(function (messages) {
+          var array = messages.map(function (item) {
+            return item.attributes;
+          });
+          array.forEach(function (item) {
+            var li = document.createElement('li');
+            var p = document.createElement('p');
+            var h3 = document.createElement('h3');
+            h3.innerText = 'Name:' + item.user;
+            p.innerText = '' + item.content;
+            li.appendChild(p);
+            li.appendChild(h3);
+            _this.messageList.append(li);
+          });
+        });
+      },
+      bindEvents: function bindEvents() {
+        var _this2 = this;
+
+        this.form.addEventListener('submit', function (e) {
+          // 监听表单防止 监听submit落空
+          e.preventDefault();
+          _this2.saveMessage();
+        });
+      },
+      saveMessage: function saveMessage() {
+        var myForm = this.form;
+        var user = myForm.querySelector('#messageUser').value;
+        var content = myForm.querySelector('#messageContent').value;
+        if (!user) {
+          alert('请输入用户名');
+        } else if (!content) {
+          alert('请输入留言内容');
+        } else if (user && content) {
+          this.model.save({ user: user, content: content }).then(function (object) {
+            var li = document.createElement('li');
+            var p = document.createElement('p');
+            var h3 = document.createElement('h3');
+            var messageList = document.querySelector('#messageList');
+            h3.innerText = 'Name:' + object.attributes.user;
+            p.innerText = '' + object.attributes.content;
+            li.appendChild(p);
+            li.appendChild(h3);
+            messageList.append(li);
+            alert('发送成功');
+            myForm.querySelector('#messageUser').value = '';
+            myForm.querySelector('#messageContent').value = '';
+          });
+        }
+      }
+    });
+    controller.init(view, model);
+  }.call();
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  return !function () {
+    var view = View('#mySlide');
+    var controller = {
+      view: null,
+      swiper: null,
+      swiperOptions: {
+        loop: true,
+        effect: 'flip',
+        grabCursor: true,
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+      init: function init(view) {
+        this.view = view;
+        this.initSwiper();
+      },
+      initSwiper: function initSwiper() {
+        this.swiper = new Swiper(this.view.querySelector('.swiper-container'), this.swiperOptions);
+      }
+    };
+    controller.init(view);
+  }.call();
+};
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  return !function () {
+    var view = View('nav.menu');
+    var controller = {
+      view: null,
+      aTags: null,
+      init: function init(view) {
+        this.view = view;
+        this.initAnimation();
+        this.bindEvents();
+      },
+      initAnimation: function initAnimation() {
+        function animate(time) {
+          requestAnimationFrame(animate);
+          TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
+      },
+      scrollToElement: function scrollToElement(element) {
+        var top = element.offsetTop;
+        var currentTop = window.scrollY;
+        var targetTop = top - 80;
+        var s = targetTop - currentTop;
+        var t = Math.abs(s / 100 * 300);
+        if (t > 500) {
+          t = 500;
+        }
+        var coords = { y: currentTop };
+        var tween = new TWEEN.Tween(coords).to({ y: targetTop }, t).easing(TWEEN.Easing.Quadratic.InOut).onUpdate(function () {
+          window.scrollTo(0, coords.y);
+        }).start();
+      },
+      bindEvents: function bindEvents() {
+        var aTags = this.view.querySelectorAll('ul > li > a');
+        for (var i = 0; i < aTags.length; i++) {
+          aTags[i].onclick = function (e) {
+            e.preventDefault();
+            // let a = e.currentTarget
+            // let href = a.getAttribute('href')
+            // a.href 是浏览器解析后的带HTTP的地址,不是我想要的地址 这里得到的结果是 '#siteAbout'
+            // let element = document.querySelector(href)
+            // let top= element.offsetTop  // 获取对应锚点距离浏览器高度
+            var element = document.querySelector(e.currentTarget.getAttribute('href'));
+            this.scrollToElement(element);
+          }.bind(this);
+        }
+      }
+    };
+    controller.init(view);
+  }.call();
+};
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  return !function () {
+    var view = View('#topNavBar');
+    var controller = {
+      view: null,
+      init: function init(view) {
+        this.view = view;
+        this.bindEvents(); // this.bindEvents.call(this)
+      },
+      bindEvents: function bindEvents() {
+        var _this = this;
+
+        view = this.view;
+        window.addEventListener('scroll', function () {
+          window.scrollY > 0 ? _this.active() : _this.deActive();
+        });
+      },
+      // bindEvents: function () {
+      //   view = this.view
+      //   window.addEventListener('scroll', function (e) {
+      //     window.scrollY > 0 ? this.active() : this.deActive()
+      //   }.bind(this))
+      // },
+      active: function active() {
+        this.view.classList.add('sticky');
+      },
+      deActive: function deActive() {
+        this.view.classList.remove('sticky');
+      }
+    };
+    controller.init(view); // controller.init.call(controller, view)
+  }.call();
+};
 
 /***/ })
 /******/ ]);

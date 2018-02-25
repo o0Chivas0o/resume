@@ -175,16 +175,15 @@
 </section>
 <section data-x id="siteMessage" class="message">
     <h2>留言板</h2>
-    <ol id="messageList">
-    </ol>
+    <ol id="messageList"></ol>
     <form id="postMessage">
-        <label><input type="text" name="user" id="messageUser" placeholder="Name">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-message"></use>
-            </svg></label>
-        <label><input type="text" name="content" id="messageContent" placeholder="Message">
+        <label class="name"><input type="text" name="user" id="messageUser" placeholder="Name">
             <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-01"></use>
+            </svg></label>
+        <label class="message"><input type="text" name="content" id="messageContent" placeholder="Message">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-message"></use>
             </svg></label>
         <input type="submit" value="Send" class="submit">
     </form>
