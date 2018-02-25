@@ -305,21 +305,6 @@ section.portfolio {
       section.portfolio .swiper-container .swiper-wrapper .swiper-slide img {
         height: 450px;
         width: 900px; }
-    section.portfolio .swiper-container .swiper-button-prev, section.portfolio .swiper-container .swiper-button-next {
-      position: absolute;
-      bottom: 50%; }
-    section.portfolio .swiper-container .swiper-button-prev {
-      left: -80px;
-      width: 64px;
-      height: 64px;
-      background-color: white;
-      border-radius: 50%; }
-    section.portfolio .swiper-container .swiper-button-next {
-      right: -80px;
-      width: 64px;
-      height: 64px;
-      background-color: white;
-      border-radius: 50%; }
 
 section.message ol {
   max-width: 940px;

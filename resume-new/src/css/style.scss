@@ -368,24 +368,6 @@ section.portfolio {
         }
       }
     }
-    .swiper-button-prev, .swiper-button-next {
-      position: absolute;
-      bottom: 50%;
-    }
-    .swiper-button-prev {
-      left: -80px;
-      width: 64px;
-      height: 64px;
-      background-color: white;
-      border-radius: 50%
-    }
-    .swiper-button-next {
-      right: -80px;
-      width: 64px;
-      height: 64px;
-      background-color: white;
-      border-radius: 50%
-    }
   }
 }
 
@@ -394,18 +376,18 @@ section.message {
     max-width: 940px;
     margin: 50px auto;
     li {
-      border:1px solid #DDDDDD;
+      border: 1px solid #DDDDDD;
       background: white;
       position: relative;
-      margin:10px auto;
-      box-shadow: 1px 1px 2px 0 rgba(201, 201, 201,0.8);
-      p{
-        font-size:16px;
-        padding-bottom:60px;
-        color:rgba(0,0,0,0.8);
+      margin: 10px auto;
+      box-shadow: 1px 1px 2px 0 rgba(201, 201, 201, 0.8);
+      p {
+        font-size: 16px;
+        padding-bottom: 60px;
+        color: rgba(0, 0, 0, 0.8);
       }
-      h3{
-        color:rgba(0,0,0,0.8);
+      h3 {
+        color: rgba(0, 0, 0, 0.8);
         position: absolute;
         font-size: 18px;
         bottom: 0;

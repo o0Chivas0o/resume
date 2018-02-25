@@ -5,9 +5,11 @@ export default function(){
       view: null,
       swiper: null,
       swiperOptions: {
+        slidesPerView: 1,
+        spaceBetween: 30,
         loop: true,
-        effect: 'flip',
-        grabCursor: true,
+        // effect: '', swiper主题
+        grabCursor: false,
         pagination: {
           el: '.swiper-pagination',
         },
