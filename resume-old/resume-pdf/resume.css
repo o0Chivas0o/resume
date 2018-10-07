@@ -84,12 +84,21 @@ a:hover {
     margin-bottom: 6px;
 }
 
+.intro .html{
+    margin-top: 10px;
+}
+.intro > div{
+    margin: 10px 0;
+}
 .skill-line-4 {
     background-image: -webkit-linear-gradient(left, #f1f2f2 110px, #3797cc 110px);
 }
 
 .skill-line-3 {
-    background-image: -webkit-linear-gradient(left, #f1f2f2 90px, #3797cc 90px);
+    background-image: -webkit-linear-gradient(left, #f1f2f2 120px, #3797cc 120px);
+}
+.skill-line-2{
+    background-image: -webkit-linear-gradient(left, #f1f2f2 120px, #3797cc 120px);
 }
 
 .introduce .connect {

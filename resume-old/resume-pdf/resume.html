@@ -19,9 +19,9 @@
         <div class="introduce">
             <i class="iconfont icon-weijianli"></i>
             <div class="intro">
-                <h3>前端 工程师</h3>
+                <h3>前端工程师</h3>
                 <h5>&nbsp;</h5>
-                <h4>24岁</h4>
+                <h4>25岁</h4>
                 <h5>&nbsp;</h5>
                 <h5>期望城市：湖北武汉</h5>
                 <h5>&nbsp;</h5>
@@ -57,7 +57,7 @@
             <i class="iconfont icon-set"></i>
             <div class="intro">
                 <h3>Skills</h3>
-                <h5>HTML</h5>
+                <h5 class="html">HTML</h5>
                 <div class="skill-line skill-line-4">
                 </div>
                 <h5>CSS</h5>
@@ -66,12 +66,19 @@
                 <h5>JavaScript</h5>
                 <div class="skill-line skill-line-3">
                 </div>
+                <h5>Vue.js</h5>
+                <div class="skill-line skill-line-2">
+                </div>
             </div>
         </div>
         <div class="line"></div>
 
         <div class="selfInfo">
-            　　对新知识有着强烈的求知欲，并能无障碍阅读前端各类技术最新文档，喜欢写博客记录自己的学习心得，善于分享与沟通。学习新的知识，包括但不局限于前端，并迫切的希望通过业务代码实现自身价值。本人个性开朗，易与人沟通交流。
+            　　对新知识有着强烈的求知欲，并能无障碍阅读前端各类技术最新文档，喜欢写博客记录自己的学习心得，善于分享与沟通。学习新的知识，包括但不局限于前端，并迫切的希望通过业务代码实现自身价值。本人个性开朗，易与人沟通交流。每天会有固定的时间到Stack
+            overflow网站查询一些问题，以及解决一些项目中的问题，并喜欢在leetcode上刷大量题目来提高自己，不论是作为知识的补充或是熟悉api和算法的过程，都是对本人有着极大帮助的。
+        </div>
+        <div class="selfInfo">
+            　　工作之余，同时也是一个热爱生活的大男孩。有猫。
         </div>
     </section>
     <section class="right">
@@ -84,7 +91,10 @@
                         <p> 掌握 HTML5、CSS3 和 JavaScript 技术。</p>
                         <p> 了解 W3C 规范、开发调试、浏览器兼容和响应式。</p>
                         <p> 掌握 jQuery 库，并能利用jQuery熟练操作DOM。</p>
-                        <p> 了解vue.js 框架 理解vue.js的MVVM思想。</p>
+                        <p> 掌握 vue.js 框架 理解vue.js的MVVM思想。</p>
+                        <p> 熟练使用vue.js框架 目前已上线项目已有4个。</p>
+                        <p> 熟练使用preload.js、swiper.js、axios、element-ui框架、vuex.js(移动端ui框架)</p>
+                        <p> 并在近期工作之余写了自己的轮子库。</p>
                     </li>
                     <li>
                         <h2 class="middle">• 开发环境</h2>
@@ -94,10 +104,12 @@
             </div>
             <div class="selfSkill">
                 <i class="iconfont icon-set1"></i> 自我能力
-                <p> 熟悉 CSS 预处理语言 Scss、Sass</p>
+                <p> 熟练使用 CSS 预处理语言 Scss、Sass</p>
                 <p> 掌握 HTML5 元素，了解标签语义化。</p>
-                <p> 掌握 JavaScript 的数据类型、 作用域链、 引用类型、 数组、 DOM增删改查、 事件模型(冒泡、捕获、事件代理、取消默认)、LocalStorage、闭包、跨域、JSONP、AJAX、原型、 原型链、 继承、 this、MVC思想 等。</p>
+                <p> 掌握 JavaScript 的数据类型、 作用域链、 引用类型、 数组、 DOM增删改查、
+                    事件模型(冒泡、捕获、事件代理、取消默认)、LocalStorage、闭包、跨域、JSONP、AJAX、原型、 原型链、 继承、 this、MVC思想 等。</p>
                 <p> 了解 HTTP 协议，能够根据 HTTP 请求、响应和状态码排查问题。</p>
+                <p> 无障碍与后台接口对接。</p>
                 <p> 能运用模块化、面向对象的方式进行编程，了解 webpack</p>
             </div>
         </div>
@@ -105,12 +117,57 @@
             <i class="iconfont icon-project"></i> 项目经验
             <ul class="middle">
                 <li>
+                    <a href="#">
+                        <h2>1.京东尚学记H5活动页(微信)(未开源项目)</h2>
+                    </a>
+                    <p>　• 京东H5外包项目的一个活动页，具备大量的动画效果、轮播功能、页面逻辑判断。</p>
+                    <p>　• 使用七牛云作为图片中转，并通过preload.js预加载大量图片。</p>
+                    <p>　• 使用原生animation，完成大量动画效果。</p>
+                    <p>　• 使用vue.js构建的SPA应用，由于删除了路由，页面逻辑全在一个页面。</p>
+                    <p>　• 使用webpack进行打包，模块化编程和函数式编程使代码逻辑更清晰，更易维护。</p>
+                    <p>　• 技术栈：vue.js + preload.js + webpack + 原生JS + swiper.js + 原生animation</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <h2>2.ovu创客星梵间公寓运营平台(为开源项目)</h2>
+                    </a>
+                    <p>　• ovu创客星的一个运营平台的项目，供管理人员使用的管理平台。</p>
+                    <p>　• 使用七牛云存储上传图片。</p>
+                    <p>　• 使用vue.js和element-ui构建的一个运营平台管理项目。</p>
+                    <p>　• 该项目处理了大量的复杂字段，并按需将字段传递给后台人员，在此项目中，熟练掌握字段的转换。</p>
+                    <p>　• 该项目运用了sass语言作为css的预处理语言，利用mixin函数封装部分样式，节省了大量的时间。</p>
+                    <p>　• 技术栈：vue.js + element-ui + webpack + 原生JS + sass</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <h2>3.ovu创客星梵间公寓员工端(移动端、微信)(为开源项目)</h2>
+                    </a>
+                    <p>　• ovu创客星的一个员工端的项目，供员工使用的员工端平台。</p>
+                    <p>　• 使用七牛云存储图片。</p>
+                    <p>　• 编写了部分使用业务逻辑和业务功能需求的组件、组件能达到ui设计的效果进行交互。</p>
+                    <p>　• 同样处理了大量的字段，按需传递给后台人员，进行数据的增删改查。</p>
+                    <p>　• 用到了mint-ui框架和vuex(ui框架)</p>
+                    <p>　• 用到vuex进行数据存储和管理、并在此项目中了解到vuex与localStorage差异</p>
+                    <p>　• 技术栈：vue.js + vuex.js + mint-ui + webpack + 原生JS</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <h2>4.洗车小程序(微信小程序)(未开源项目)</h2>
+                    </a>`
+                    <p>　• 一个洗车小程序的应用。</p>
+                    <p>　• 前期使用mpvue，未能达到预期的效果，后台对接也会出现问题，所以使用了原生小程序的框架。</p>
+                    <p>　• 用到BEM命名格式，由于小程序不支持预处理css语言，所以用这种方式来归纳和整理缩写的css</p>
+                    <p>　• 由于小程序是单项数据绑定，所以在绑定事件以及数据更新会重复用到大量的setData函数。</p>
+                    <p>　• 技术栈：mpvue.js + 原生小程序 + 原生JS</p>
+                </li>
+                <li>
                     <a href="http://lizhiying.pro/home.html">
-                        <h2>1.仿网易云音乐(手机端)</h2>
+                        <h2>5.仿网易云音乐(手机端)</h2>
                     </a>
                     <p>　• 预览地址：<a href="http://lizhiying.pro/home.html">http://lizhiying.pro/home.html</a>
                     </p>
-                    <p>　• 源码地址：<a href="https://github.com/o0Chivas0o/163music">https://github.com/o0Chivas0o/163music</a>
+                    <p>　• 源码地址：<a
+                            href="https://github.com/o0Chivas0o/163music">https://github.com/o0Chivas0o/163music</a>
                     </p>
                     <p>　• 手机端网易云音乐，具备播放、暂停、显示歌词的功能。</p>
                     <p>　• 使用七牛作为中转，leanCloud作为数据库。</p>
@@ -120,7 +177,7 @@
                 </li>
                 <li>
                     <a href="https://o0chivas0o.github.io/resume/resume-new/">
-                        <h2>2.个人在线简历</h2>
+                        <h2>6.个人在线简历</h2>
                     </a>
                     <p>　• 预览地址：<a href="https://o0chivas0o.github.io/resume/resume-new/">https://o0chivas0o.github.io/resume/resume-new/</a>
                     </p>
@@ -134,7 +191,7 @@
                 </li>
                 <li>
                     <a href="https://o0chivas0o.github.io/vue/resumeMaker/vue-4/page.html">
-                        <h2>3.Vue待办事项</h2>
+                        <h2>7.Vue待办事项</h2>
                     </a>
                     <p>　• 预览地址：<a
                             href="https://o0chivas0o.github.io/vue/resumeMaker/vue-4/page.html">https://o0chivas0o.github.io/vue/resumeMaker/vue-4/page.html</a>
@@ -151,7 +208,7 @@
                 </li>
                 <li>
                     <a href="https://o0chivas0o.github.io/demo/canvas/canvas-PC+web/">
-                        <h2>4.Canvas画板</h2>
+                        <h2>8.Canvas画板</h2>
                     </a>
                     <p>　• 预览地址：<a href="https://o0chivas0o.github.io/demo/canvas/canvas-PC+web/">https://o0chivas0o.github.io/demo/canvas/canvas-PC+web/</a>
                     </p>
@@ -163,7 +220,7 @@
                 </li>
                 <li>
                     <a href="https://o0chivas0o.github.io/demo/pikachu/animation-pikachu">
-                        <h2>5.自动绘制的皮卡丘</h2>
+                        <h2>9.自动绘制的皮卡丘</h2>
                     </a>
                     <p>　• 预览地址：<a href="https://o0chivas0o.github.io/demo/pikachu/animation-pikachu">https://o0chivas0o.github.io/demo/pikachu/animation-pikachu</a>
                     </p>
@@ -176,7 +233,7 @@
                 </li>
                 <li>
                     <a href="https://github.com/o0Chivas0o/demo">
-                        <h2>6.其他一些Demo</h2>
+                        <h2>10.其他一些Demo</h2>
                     </a>
                     <p>　• 预览地址：<a href="https://github.com/o0Chivas0o/demo">https://github.com/o0Chivas0o/demo</a>
                     </p>
@@ -186,6 +243,13 @@
                     <p>　• 有自己写的轮播、popover组件、具备自动加载功能的响应式布局页面</p>
                     <p>　• 事件监听模型(捕获、冒泡)，会动的简历(用到了prism.js,marked.js)</p>
                     <p>　• 以及一些CSS的测试，和应用。</p>
+                </li>
+                <li>
+                    <a href="#">
+                        <h2>11.其他未上线、完成页面功能的部分项目(为开源)</h2>
+                    </a>
+                    <p>　• 2个小程序、2个pc端、2个移动端。</p>
+                    <p>　• 用到大量库、方法来提高开发效率</p>
                 </li>
             </ul>
         </section>
